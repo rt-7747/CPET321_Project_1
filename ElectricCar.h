@@ -1,7 +1,7 @@
 /* Derived class that gets the |Energy Capacity|Efficiency|Capacity| from the file and sets them  
    Uses vehicle specifications defined in the Base class */
 
-// I am so done
+// New change
 
 #ifndef __ELECTRICCAR_H__
 #define __ELECTRICCAR_H__
