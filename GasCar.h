@@ -4,6 +4,8 @@
 #define __GASCAR_H__
 #include "Vehicle.h"
 
+//melstext
+
 class GasCar : public Vehicle {
 private:
 
