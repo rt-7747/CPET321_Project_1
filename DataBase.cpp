@@ -10,7 +10,7 @@ void DataBase::~DataBase{
 	clearInvetory;
 
 }
-//clears the cars in the invetory for 
+//clears the cars in the inventory for 
 void DataBase::ClearInventory{
 	for (Vehicle* v : Inventory) {
 		delete v;
