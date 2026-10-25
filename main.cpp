@@ -6,6 +6,7 @@
 
 using namespace std;
 
+/*
 void PrintVehicle(Vehicle* V)
 {
     string blank;
@@ -31,28 +32,12 @@ void PrintVehicle(Vehicle* V)
 
     }
 }
+*/
 
 int main() {
     /*
-	Database db;
-	// Create some vehicles
-	ElectricCar tesla("Tesla", "Model S", 2020, 100);
-	GasCar ford("Ford", "Mustang", 2019, 15);
-	// Add vehicles to the database
-	db.addVehicle(&tesla);
-	db.addVehicle(&ford);
-	// Display all vehicles in the database
-	db.displayVehicles();
-    */
-
-    /*
 	When a car is reserved for example a Tesla Model S 2020 is reserved for day 3 and the Tesla Model S is in Inventory[4] Day[6]Reseravation[0] = Inventory[4]
     */
-
-
-
-    #define DATABASE_SIZE (50); // Maximum of 50 vehicles in the inventory
-    Vehicle* Inventory[DATABASE_SIZE] = {};
 
 	ifstream InFile;
 	string line;
@@ -106,7 +91,7 @@ int main() {
             Gas_ptr->GetFuelCap(Capacity);
             Gas_ptr->GetGas_Efficiency(Efficiency);
 
-            Inventory[NumVehicles] = Gas_ptr;
+            db.AddVehicle(Gas_ptr);
         } // if()
         else if (EngineType == "EV")
         {
@@ -123,16 +108,13 @@ int main() {
 
             // Insert the Electric car into the database
 
-            Inventory[NumVehicles] = EV_ptr;
+            db.AddVehicle(EV_ptr);
         } // if...if...else()
         else
         {
             cout << "Error! Unrecognized propulsion type." << endl;
             return -3;
         } // if...else()
-
-       // Increment the running counter of the cars in the inventory
-        NumVehicles++;
     } // while()
 
     bool ExitRequested = false;
@@ -160,7 +142,6 @@ int main() {
             cout << " O = Search by model" << endl;
             cout << " Y = Search by Year" << endl;
 			cout << " C = Search by Color" << endl;
-			cout << " E = Search by Efficiency" << endl;
 			cout << " R = Set a Reservation" << endl;
             cout << " Q = Quit / Exit the program" << endl;
             break;
@@ -173,18 +154,7 @@ int main() {
             cin >> DesiredMake;
 
             // Search the database
-            int Matches = 0;
-            for (int i = 0; i < NumVehicles; i++)
-            {
-                if (Inventory[i]->GetMake() == DesiredMake)
-                {
-                    // Print out matching entries
-                    PrintVehicle(Inventory[i]);
-                    Matches++;
-                }
-            }
-            if (Matches == 0)
-                cout << " No vehicles found with Make " << DesiredMake << endl;
+            SearchVehicles(DesiredMake);
             break;
             // Print out matching entries
         } // case 'a' or 'A'
@@ -195,20 +165,8 @@ int main() {
             cout << "Enter Model > ";
             cin >> DesiredModel;
 
-            int Matches = 0;
-            for (int i = 0; i < NumVehicles; i++)
-            {
-                if (Inventory[i]->GetModel() == DesiredModel)
-                {
-                    // Print out matching entries
-                    PrintVehicle(Inventory[i]);
-                    Matches++;
-                }
-            }
-            if (Matches == 0)
-                cout << " No vehicles found with Model " << DesiredModel << endl;
+            SearchVehicles(DesiredModel);
             break;
-            // Print out matching entries
         } // case 'o' or 'O'
         case 'y': case 'Y': // Search by Year
         {
@@ -238,40 +196,9 @@ int main() {
 			string DesiredColor;
 			cout << "Enter Color > ";
 			cin >> DesiredColor;
-			int Matches = 0;
-			for (int i = 0; i < NumVehicles; i++)
-			{
-				if (Inventory[i]->GetColor() == DesiredColor)
-				{
-					// Print out matching entries
-					PrintVehicle(Inventory[i]);
-					Matches++;
-				}
-			}
-			if (Matches == 0)
-				cout << " No vehicles found with Color " << DesiredColor << endl;
+            SearchVehicles(DesiredColor);
 			break;
 		} // case 'c' or 'C'
-        case 'e': case 'E': // Search by Efficiency
-        {
-            // Prompt the user for the search criteria
-            float ;
-            cout << "Enter Efficiency > ";
-            cin >> DesiredEfficiency;
-            int Matches = 0;
-            for (int i = 0; i < NumVehicles; i++)
-            {
-                if (Inventory[i]->GetEfficiency() == DesiredEfficiency)
-                {
-                    // Print out matching entries
-                    PrintVehicle(Inventory[i]);
-                    Matches++;
-                }
-            }
-            if (Matches == 0)
-                cout << " No vehicles found with Efficiency " << DesiredEfficiency << endl;
-            break;
-		} // case 'e' or 'E'
 		case 'r': case 'R': // Set a Reservation
 		{
 			// Prompt the user for the search criteria
@@ -287,18 +214,23 @@ int main() {
 			cin >> DesiredDay;
 
 			DesiredDay = DesiredDay - 1; // Adjusting for array
+          
+            int InventoryIndex = -1;
 
-            int InventoryIndex;
-            if (Inventory[i] != nullptr &&
+            //Need getter for Inventory based on given make model and year
+
+            /*
+            
+            if (inventory[i] != nullptr &&
                 Inventory[i]->GetMake() == desiredMake &&
                 Inventory[i]->GetModel() == desiredModel &&
                 Inventory[i]->GetYear() == desiredYear)
             {
 				InventoryIndex = i;
             }
+            */
 
-
-			SetDaysReserved(InventoryIndex,DesiredDay); // Looks up the vehicle in the database that match the make, model, and year and sets the reservation for the specified day
+			ReserveVehicle(InventoryIndex,DesiredDay); // Looks up the vehicle in the database that match the make, model, and year and sets the reservation for the specified day
 
 			break;
 		} // case 'r' or 'R'
