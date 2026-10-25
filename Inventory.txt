@@ -1,99 +1,99 @@
-1998 Red Ford Mustang ICE 15.5 21.0
+Ford Mustang 1998 ICE 15.5 21.0 Red
 
-2024 White Tesla Model 3 EV 75.0 25.0
+Tesla Model 3 2024 EV 75.0 25.0 White
 
-2005 Silver Honda Accord ICE 17.1 22.0
+Honda Accord 2005 ICE 17.1 22.0 Silver
 
-2022 Blue Ford Mustang Mach-E EV 91.0 30.0
+Ford Mustang Mach-E 2022 EV 91.0 30.0 Blue
 
-1987 Black Chevrolet Camaro ICE 15.5 18.0
+Chevrolet Camaro 1987 ICE 15.5 18.0 Black
 
-2025 Gray Hyundai IONIQ 5 EV 84.0 26.4
+Hyundai IONIQ 5 2025 EV 84.0 26.4 Gray
 
-2001 Green Toyota Tacoma ICE 18.5 18.0
+Toyota Tacoma 2001 ICE 18.5 18.0 Green
 
-2023 White Volkswagen ID.4 EV 82.0 29.0
+Volkswagen ID.4 2023 EV 82.0 29.0 White
 
-1995 Blue BMW 325i ICE 17.2 21.0
+BMW 325i 1995 ICE 17.2 21.0 Blue
 
-2024 Black Rivian R1T EV 135.0 43.0
+Rivian R1T 2024 EV 135.0 43.0 Black
 
-2010 Silver Toyota Prius ICE 11.9 50.0
+Toyota Prius 2010 ICE 11.9 50.0 Silver
 
-2021 Red Porsche Taycan EV 93.4 32.0
+Porsche Taycan 2021 EV 93.4 32.0 Red
 
-1985 White Chevrolet Corvette ICE 20.0 17.0
+Chevrolet Corvette 1985 ICE 20.0 17.0 White
 
-2025 Gray Kia EV6 EV 84.0 27.0
+Kia EV6 2025 EV 84.0 27.0 Gray
 
-2008 Black Dodge Charger ICE 18.0 20.0
+Dodge Charger 2008 ICE 18.0 20.0 Black
 
-2023 Blue Nissan Ariya EV 87.0 30.0
+Nissan Ariya 2023 EV 87.0 30.0 Blue
 
-1992 Red Honda Civic ICE 11.9 32.0
+Honda Civic 1992 ICE 11.9 32.0 Red
 
-2024 Silver Cadillac LYRIQ EV 102.0 31.2
+Cadillac LYRIQ 2024 EV 102.0 31.2 Silver
 
-2003 White Ford F-150 ICE 25.0 16.0
+Ford F-150 2003 ICE 25.0 16.0 White
 
-2022 Green Volkswagen ID.4 EV 82.0 29.0
+Volkswagen ID.4 2022 EV 82.0 29.0 Green
 
-1979 Black Pontiac Firebird ICE 21.0 15.0
+Pontiac Firebird 1979 ICE 21.0 15.0 Black
 
-2025 White Chevrolet Equinox EV EV 85.0 26.7
+Chevrolet Equinox EV 2025 EV 85.0 26.7 White
 
-2012 Gray Nissan Altima ICE 20.0 27.0
+Nissan Altima 2012 ICE 20.0 27.0 Gray
 
-2023 Red Tesla Model Y EV 75.0 27.0
+Tesla Model Y 2023 EV 75.0 27.0 Red
 
-1999 Blue Jeep Wrangler ICE 19.0 16.0
+Jeep Wrangler 1999 ICE 19.0 16.0 Blue
 
-2024 Black BMW i4 EV 81.5 24.5
+BMW i4 2024 EV 81.5 24.5 Black
 
-2006 Silver Chevrolet Silverado ICE 26.0 16.0
+Chevrolet Silverado 2006 ICE 26.0 16.0 Silver
 
-2025 Blue Hyundai IONIQ 6 EV 77.4 22.7
+Hyundai IONIQ 6 2025 EV 77.4 22.7 Blue
 
-1990 White Toyota Celica ICE 15.9 25.0
+Toyota Celica 1990 ICE 15.9 25.0 White
 
-2022 Gray Ford F-150 Lightning EV 131.0 43.7
+Ford F-150 Lightning 2022 EV 131.0 43.7 Gray
 
-2015 Red Subaru WRX ICE 15.9 23.0
+Subaru WRX 2015 ICE 15.9 23.0 Red
 
-2024 Green Volvo EX30 EV 69.0 27.0
+Volvo EX30 2024 EV 69.0 27.0 Green
 
-1988 Silver Mercedes-Benz 560SL ICE 21.1 15.0
+Mercedes-Benz 560SL 1988 ICE 21.1 15.0 Silver
 
-2023 White Kia EV6 EV 77.4 27.0
+Kia EV6 2023 EV 77.4 27.0 White
 
-2004 Black Lexus IS 300 ICE 17.5 20.0
+Lexus IS 300 2004 ICE 17.5 20.0 Black
 
-2025 Silver Porsche Macan Electric EV 100.0 34.0
+Porsche Macan Electric 2025 EV 100.0 34.0 Silver
 
-1997 Green Ford Explorer ICE 21.0 17.0
+Ford Explorer 1997 ICE 21.0 17.0 Green
 
-2021 Blue Polestar 2 EV 78.0 30.0
+Polestar 2 2021 EV 78.0 30.0 Blue
 
-2011 White Honda CR-V ICE 15.3 25.0
+Honda CR-V 2011 ICE 15.3 25.0 White
 
-2024 Red Chevrolet Blazer EV EV 85.0 27.2
+Chevrolet Blazer EV 2024 EV 85.0 27.2 Red
 
-1972 Orange Dodge Challenger ICE 19.0 12.0
+Dodge Challenger 1972 ICE 19.0 12.0 Orange
 
-2025 Black Tesla Model S EV 95.0 23.2
+Tesla Model S 2025 EV 95.0 23.2 Black
 
-2007 Blue Mazda MX-5 Miata ICE 12.7 25.0
+Mazda MX-5 Miata 2007 ICE 12.7 25.0 Blue
 
-2023 Gray Genesis Electrified GV70 EV 77.4 34.0
+Genesis Electrified GV70 2023 EV 77.4 34.0 Gray
 
-1994 White Ford Bronco ICE 32.0 14.0
+Ford Bronco 1994 ICE 32.0 14.0 White
 
-2024 Silver Nissan Leaf EV 60.0 30.0
+Nissan Leaf 2024 EV 60.0 30.0 Silver
 
-2016 Black Toyota 4Runner ICE 23.0 18.0
+Toyota 4Runner 2016 ICE 23.0 18.0 Black
 
-2025 Green Cadillac OPTIQ EV 85.0 29.8
+Cadillac OPTIQ 2025 EV 85.0 29.8 Green
 
-1982 Red Volkswagen Golf ICE 11.9 30.0
+Volkswagen Golf 1982 ICE 11.9 30.0 Red
 
-2023 White Ford Mustang Mach-E EV 91.0 30.0
+Ford Mustang Mach-E 2023 EV 91.0 30.0 White
