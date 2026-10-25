@@ -129,6 +129,7 @@ int main() {
 		cout << "| (_| (_| | |    | | |  __/ | | | || (_| | |" << endl;
 		cout << " \___\__,_|_|    |_|  \___|_| |_|\__\__,_|_|" << endl;
 		cout << "================================================" << endl
+        cout << "Hello, today is Day " << GetCurrentDate() << endl;
         cout << "Enter Command (? for help) > ";
         cin >> Command;
 
@@ -137,12 +138,17 @@ int main() {
         {
         case '?': // Help screen
         {
+			cout << "DAY " << GetCurrentDate() << endl;
             cout << " ? = Display Help" << endl;
             cout << " M = Search by Make" << endl;
             cout << " O = Search by model" << endl;
             cout << " Y = Search by Year" << endl;
 			cout << " C = Search by Color" << endl;
 			cout << " R = Set a Reservation" << endl;
+            cout << " A = Print Avaliable Vehicle List" << endl;
+            cout << " P = Print Reserved Vehicle List" << endl;
+            cout << " I = Print Inventory" << endl;
+			cout << " D = Advance the Date" << endl;
             cout << " Q = Quit / Exit the program" << endl;
             break;
         } // Case '?'
@@ -234,6 +240,27 @@ int main() {
 
 			break;
 		} // case 'r' or 'R'
+		case 'a': case 'A': // Print Available Vehicle List
+		{
+            PrintAvailableVehicles();
+			break;
+		} // case 'a' or 'A'
+        case 'p': case 'P': // Print Reserved Vehicle List
+        {
+            PrintReservedVehicles();
+            break;
+        } // case 'p' or 'P'
+		case 'i': case 'I': // Print Inventory
+		{
+			PrintAllVehicles();
+			break;
+		} // case 'i' or 'I'
+		case 'd': case 'D': // Advance the Date
+		{
+			AdvanceDate();
+			cout << "Date: Day" << GetCurrentDate() << endl;
+			break;
+		} // case 'd' or 'D'
         case 'q': case 'Q': // Exit the program
         {
             ExitRequested = true;
