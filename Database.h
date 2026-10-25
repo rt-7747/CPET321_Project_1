@@ -39,9 +39,9 @@ public:
     // 
     void ClearInventory();
     bool SearchVehicles(const std::string& query)const; // 
-    void PrintAllVehicles() const;
-    void PrintReservedVehicles() const;
-    void PrintAvailableVehicles() const;
+    virtual void PrintAllVehicles() const;
+    virtual void PrintReservedVehicles() const;
+    virtual void PrintAvailableVehicles() const;
 
     bool ReserveVehicles(int vehicleIndex, int reservationDate);
 
