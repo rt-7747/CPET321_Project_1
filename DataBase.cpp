@@ -30,7 +30,7 @@ bool DataBase::AddVehicle(Vehicle* vehicle) {
 }
 
 //presents the current date 
-int DataBase::GetcurrentDate() const {
+int DataBase::GetCurrentDate() const {
 	return currentDate;
 }
 
