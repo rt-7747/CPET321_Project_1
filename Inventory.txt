@@ -1,0 +1,99 @@
+1998 Red Ford Mustang "ICE"
+
+2024 White Tesla Model 3 "EV"
+
+2005 Silver Honda Accord "ICE"
+
+2022 Blue Ford Mustang Mach-E "EV"
+
+1987 Black Chevrolet Camaro "ICE"
+
+2025 Gray Hyundai IONIQ 5 "EV"
+
+2001 Green Toyota Tacoma "ICE"
+
+2023 White Volkswagen ID.4 "EV"
+
+1995 Blue BMW 325i "ICE"
+
+2024 Black Rivian R1T "EV"
+
+2010 Silver Toyota Prius "ICE"
+
+2021 Red Porsche Taycan "EV"
+
+1985 White Chevrolet Corvette "ICE"
+
+2025 Gray Kia EV6 "EV"
+
+2008 Black Dodge Charger "ICE"
+
+2023 Blue Nissan Ariya "EV"
+
+1992 Red Honda Civic "ICE"
+
+2024 Silver Cadillac LYRIQ "EV"
+
+2003 White Ford F-150 "ICE"
+
+2022 Green Volkswagen ID.4 "EV"
+
+1979 Black Pontiac Firebird "ICE"
+
+2025 White Chevrolet Equinox EV "EV"
+
+2012 Gray Nissan Altima "ICE"
+
+2023 Red Tesla Model Y "EV"
+
+1999 Blue Jeep Wrangler "ICE"
+
+2024 Black BMW i4 "EV"
+
+2006 Silver Chevrolet Silverado "ICE"
+
+2025 Blue Hyundai IONIQ 6 "EV"
+
+1990 White Toyota Celica "ICE"
+
+2022 Gray Ford F-150 Lightning "EV"
+
+2015 Red Subaru WRX "ICE"
+
+2024 Green Volvo EX30 "EV"
+
+1988 Silver Mercedes-Benz 560SL "ICE"
+
+2023 White Kia EV6 "EV"
+
+2004 Black Lexus IS 300 "ICE"
+
+2025 Silver Porsche Macan Electric "EV"
+
+1997 Green Ford Explorer "ICE"
+
+2021 Blue Polestar 2 "EV"
+
+2011 White Honda CR-V "ICE"
+
+2024 Red Chevrolet Blazer EV "EV"
+
+1972 Orange Dodge Challenger "ICE"
+
+2025 Black Tesla Model S "EV"
+
+2007 Blue Mazda MX-5 Miata "ICE"
+
+2023 Gray Genesis Electrified GV70 "EV"
+
+1994 White Ford Bronco "ICE"
+
+2024 Silver Nissan Leaf "EV"
+
+2016 Black Toyota 4Runner "ICE"
+
+2025 Green Cadillac OPTIQ "EV"
+
+1982 Red Volkswagen Golf "ICE"
+
+2023 White Ford Mustang Mach-E "EV"
