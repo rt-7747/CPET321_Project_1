@@ -1,99 +1,99 @@
-1998 Red Ford Mustang "ICE"
+1998 Red Ford Mustang ICE 15.5 21.0
 
-2024 White Tesla Model 3 "EV"
+2024 White Tesla Model 3 EV 75.0 25.0
 
-2005 Silver Honda Accord "ICE"
+2005 Silver Honda Accord ICE 17.1 22.0
 
-2022 Blue Ford Mustang Mach-E "EV"
+2022 Blue Ford Mustang Mach-E EV 91.0 30.0
 
-1987 Black Chevrolet Camaro "ICE"
+1987 Black Chevrolet Camaro ICE 15.5 18.0
 
-2025 Gray Hyundai IONIQ 5 "EV"
+2025 Gray Hyundai IONIQ 5 EV 84.0 26.4
 
-2001 Green Toyota Tacoma "ICE"
+2001 Green Toyota Tacoma ICE 18.5 18.0
 
-2023 White Volkswagen ID.4 "EV"
+2023 White Volkswagen ID.4 EV 82.0 29.0
 
-1995 Blue BMW 325i "ICE"
+1995 Blue BMW 325i ICE 17.2 21.0
 
-2024 Black Rivian R1T "EV"
+2024 Black Rivian R1T EV 135.0 43.0
 
-2010 Silver Toyota Prius "ICE"
+2010 Silver Toyota Prius ICE 11.9 50.0
 
-2021 Red Porsche Taycan "EV"
+2021 Red Porsche Taycan EV 93.4 32.0
 
-1985 White Chevrolet Corvette "ICE"
+1985 White Chevrolet Corvette ICE 20.0 17.0
 
-2025 Gray Kia EV6 "EV"
+2025 Gray Kia EV6 EV 84.0 27.0
 
-2008 Black Dodge Charger "ICE"
+2008 Black Dodge Charger ICE 18.0 20.0
 
-2023 Blue Nissan Ariya "EV"
+2023 Blue Nissan Ariya EV 87.0 30.0
 
-1992 Red Honda Civic "ICE"
+1992 Red Honda Civic ICE 11.9 32.0
 
-2024 Silver Cadillac LYRIQ "EV"
+2024 Silver Cadillac LYRIQ EV 102.0 31.2
 
-2003 White Ford F-150 "ICE"
+2003 White Ford F-150 ICE 25.0 16.0
 
-2022 Green Volkswagen ID.4 "EV"
+2022 Green Volkswagen ID.4 EV 82.0 29.0
 
-1979 Black Pontiac Firebird "ICE"
+1979 Black Pontiac Firebird ICE 21.0 15.0
 
-2025 White Chevrolet Equinox EV "EV"
+2025 White Chevrolet Equinox EV EV 85.0 26.7
 
-2012 Gray Nissan Altima "ICE"
+2012 Gray Nissan Altima ICE 20.0 27.0
 
-2023 Red Tesla Model Y "EV"
+2023 Red Tesla Model Y EV 75.0 27.0
 
-1999 Blue Jeep Wrangler "ICE"
+1999 Blue Jeep Wrangler ICE 19.0 16.0
 
-2024 Black BMW i4 "EV"
+2024 Black BMW i4 EV 81.5 24.5
 
-2006 Silver Chevrolet Silverado "ICE"
+2006 Silver Chevrolet Silverado ICE 26.0 16.0
 
-2025 Blue Hyundai IONIQ 6 "EV"
+2025 Blue Hyundai IONIQ 6 EV 77.4 22.7
 
-1990 White Toyota Celica "ICE"
+1990 White Toyota Celica ICE 15.9 25.0
 
-2022 Gray Ford F-150 Lightning "EV"
+2022 Gray Ford F-150 Lightning EV 131.0 43.7
 
-2015 Red Subaru WRX "ICE"
+2015 Red Subaru WRX ICE 15.9 23.0
 
-2024 Green Volvo EX30 "EV"
+2024 Green Volvo EX30 EV 69.0 27.0
 
-1988 Silver Mercedes-Benz 560SL "ICE"
+1988 Silver Mercedes-Benz 560SL ICE 21.1 15.0
 
-2023 White Kia EV6 "EV"
+2023 White Kia EV6 EV 77.4 27.0
 
-2004 Black Lexus IS 300 "ICE"
+2004 Black Lexus IS 300 ICE 17.5 20.0
 
-2025 Silver Porsche Macan Electric "EV"
+2025 Silver Porsche Macan Electric EV 100.0 34.0
 
-1997 Green Ford Explorer "ICE"
+1997 Green Ford Explorer ICE 21.0 17.0
 
-2021 Blue Polestar 2 "EV"
+2021 Blue Polestar 2 EV 78.0 30.0
 
-2011 White Honda CR-V "ICE"
+2011 White Honda CR-V ICE 15.3 25.0
 
-2024 Red Chevrolet Blazer EV "EV"
+2024 Red Chevrolet Blazer EV EV 85.0 27.2
 
-1972 Orange Dodge Challenger "ICE"
+1972 Orange Dodge Challenger ICE 19.0 12.0
 
-2025 Black Tesla Model S "EV"
+2025 Black Tesla Model S EV 95.0 23.2
 
-2007 Blue Mazda MX-5 Miata "ICE"
+2007 Blue Mazda MX-5 Miata ICE 12.7 25.0
 
-2023 Gray Genesis Electrified GV70 "EV"
+2023 Gray Genesis Electrified GV70 EV 77.4 34.0
 
-1994 White Ford Bronco "ICE"
+1994 White Ford Bronco ICE 32.0 14.0
 
-2024 Silver Nissan Leaf "EV"
+2024 Silver Nissan Leaf EV 60.0 30.0
 
-2016 Black Toyota 4Runner "ICE"
+2016 Black Toyota 4Runner ICE 23.0 18.0
 
-2025 Green Cadillac OPTIQ "EV"
+2025 Green Cadillac OPTIQ EV 85.0 29.8
 
-1982 Red Volkswagen Golf "ICE"
+1982 Red Volkswagen Golf ICE 11.9 30.0
 
-2023 White Ford Mustang Mach-E "EV"
+2023 White Ford Mustang Mach-E EV 91.0 30.0
