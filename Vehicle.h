@@ -44,9 +44,9 @@ public:
     void AddVehicleToReserve();
     
     //From base class (GrandFather class)
-    void PrintReservation();
-    void PrintAvailability();
-    void PrintInventory();
+    void PrintReservedVehicles() const;
+    void PrintAvailableVehicles() const;
+    void PrintAllVehicles() const;
     
     //Deconstructor (gas & electric car objects)
     virtual ~Vehicle();
