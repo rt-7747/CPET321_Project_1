@@ -1,7 +1,7 @@
 #include "DataBase.h"
 #include <isostream>
 
-//constructor
+//constructor the updates
 DataBase::DataBase()::currentDate(1) {}
 
 //deconstructor 
