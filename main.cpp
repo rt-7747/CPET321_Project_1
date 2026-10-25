@@ -177,22 +177,10 @@ int main() {
         case 'y': case 'Y': // Search by Year
         {
             // Prompt the user for the search criteria
-            int DesiredYear;
+            string DesiredYear;
             cout << "Enter Year > ";
             cin >> DesiredYear;
-
-            int Matches = 0;
-            for (int i = 0; i < NumVehicles; i++)
-            {
-                if (Inventory[i]->GetYear() == DesiredYear)
-                {
-                    // Print out matching entries
-                    PrintVehicle(Inventory[i]);
-                    Matches++;
-                }
-            }
-            if (Matches == 0)
-                cout << " No vehicles found with Year " << DesiredYear << endl;
+            SearchVehicles(DesiredYear);
             break;
             // Print out matching entries
         } // case 'y' or 'Y'
