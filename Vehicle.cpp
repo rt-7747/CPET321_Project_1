@@ -88,7 +88,7 @@ void Vehicle::AddVehicleToReserve() {
 }
 
 // Print reservation list
-void Vehicle::PrintReservation() {
+void Vehicle::PrintReservedVehicles()const {
     cout << "\n Reservation List:\n";
 
     for (int i = 0; i < Vcount; i++) {
@@ -101,7 +101,7 @@ void Vehicle::PrintReservation() {
 }
 
 // Print available vehicles
-void Vehicle::PrintAvailability() {
+void Vehicle::PrintAvailableVehicles() const{
     cout << "\n Available Vehicles:\n";
 
     for (int i = 0; i < Vcount; i++) {
@@ -121,7 +121,7 @@ void Vehicle::PrintAvailability() {
 }
 
 // Print complete inventory
-void Vehicle::PrintInventory() {
+void Vehicle::PrintAllVehicles()const {
     cout << "\nVehicle Inventory:\n";
 
     for () {
