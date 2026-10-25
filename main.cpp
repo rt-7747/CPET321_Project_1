@@ -6,6 +6,32 @@
 
 using namespace std;
 
+void PrintVehicle(Vehicle* V)
+{
+    string blank;
+    cout << "Make: " << V->GetMake() << "  Model: " << V->GetModel()
+        << "  Year: " << V->GetYear() << endl;
+    V->GetStats(blank, blank, blank);
+    if (isReserved = false)
+    {
+        cout << " AVALIABLE" << endl;
+    }
+    else
+    {
+        cout << "This vehicle is reserved on: ";
+        for (int i = 0; i < 30; i++) {
+			for (int j = 0; j < 50; j++)
+			{
+				if (Days[i]Reservations[j] == V)
+				{
+					cout << "Day " << i + 1 << endl;
+				}
+			}
+        }
+
+    }
+}
+
 int main() {
     /*
 	Database db;
@@ -18,6 +44,15 @@ int main() {
 	// Display all vehicles in the database
 	db.displayVehicles();
     */
+
+    /*
+	When a car is reserved for example a Tesla Model S 2020 is reserved for day 3 and the Tesla Model S is in Inventory[4] Day[6]Reseravation[0] = Inventory[4]
+    */
+
+
+
+    #define DATABASE_SIZE (50); // Maximum of 50 vehicles in the inventory
+    Vehicle* Inventory[DATABASE_SIZE] = {};
 
 	ifstream InFile;
 	string line;
@@ -71,7 +106,7 @@ int main() {
             Gas_ptr->GetFuelCap(Capacity);
             Gas_ptr->GetGas_Efficiency(Efficiency);
 
-            Database[NumVehicles] = Gas_ptr;
+            Inventory[NumVehicles] = Gas_ptr;
         } // if()
         else if (EngineType == "EV")
         {
@@ -88,7 +123,7 @@ int main() {
 
             // Insert the Electric car into the database
 
-            Database[NumVehicles] = EV_ptr;
+            Inventory[NumVehicles] = EV_ptr;
         } // if...if...else()
         else
         {
@@ -141,10 +176,10 @@ int main() {
             int Matches = 0;
             for (int i = 0; i < NumVehicles; i++)
             {
-                if (Database[i]->GetMake() == DesiredMake)
+                if (Inventory[i]->GetMake() == DesiredMake)
                 {
                     // Print out matching entries
-                    PrintVehicle(Database[i]);
+                    PrintVehicle(Inventory[i]);
                     Matches++;
                 }
             }
@@ -163,10 +198,10 @@ int main() {
             int Matches = 0;
             for (int i = 0; i < NumVehicles; i++)
             {
-                if (Database[i]->GetModel() == DesiredModel)
+                if (Inventory[i]->GetModel() == DesiredModel)
                 {
                     // Print out matching entries
-                    PrintVehicle(Database[i]);
+                    PrintVehicle(Inventory[i]);
                     Matches++;
                 }
             }
@@ -185,10 +220,10 @@ int main() {
             int Matches = 0;
             for (int i = 0; i < NumVehicles; i++)
             {
-                if (Database[i]->GetYear() == DesiredYear)
+                if (Inventory[i]->GetYear() == DesiredYear)
                 {
                     // Print out matching entries
-                    PrintVehicle(Database[i]);
+                    PrintVehicle(Inventory[i]);
                     Matches++;
                 }
             }
@@ -206,10 +241,10 @@ int main() {
 			int Matches = 0;
 			for (int i = 0; i < NumVehicles; i++)
 			{
-				if (Database[i]->GetColor() == DesiredColor)
+				if (Inventory[i]->GetColor() == DesiredColor)
 				{
 					// Print out matching entries
-					PrintVehicle(Database[i]);
+					PrintVehicle(Inventory[i]);
 					Matches++;
 				}
 			}
@@ -226,10 +261,10 @@ int main() {
             int Matches = 0;
             for (int i = 0; i < NumVehicles; i++)
             {
-                if (Database[i]->GetEfficiency() == DesiredEfficiency)
+                if (Inventory[i]->GetEfficiency() == DesiredEfficiency)
                 {
                     // Print out matching entries
-                    PrintVehicle(Database[i]);
+                    PrintVehicle(Inventory[i]);
                     Matches++;
                 }
             }
@@ -243,31 +278,27 @@ int main() {
 			string DesiredMake;
 			string DesiredModel;
             string DesiredYear;
+            int DesiredDay;
 
             cout << "Enter Make, Model, and Year of desired vehicle > " << endl;
 			cin >> DesiredMake;
 			cin >> DesiredModel;
 			cin >> DesiredYear;
+			cin >> DesiredDay;
 
-			cout << "Enter number of days reserved 
+			DesiredDay = DesiredDay - 1; // Adjusting for array
 
-            /*
-			search database for matching vehicle
-            
-            			int Matches = 0;
-			for (int i = 0; i < NumVehicles; i++)
-			{
-				if (Database[i]->GetReservation() == DesiredReservation)
-				{
-					// Print out matching entries
-					PrintVehicle(Database[i]);
-					Matches++;
-				}
-			}
-			if (Matches == 0)
-				cout << " No vehicles found with Reservation " << DesiredReservation << endl;
+            int InventoryIndex;
+            if (Inventory[i] != nullptr &&
+                Inventory[i]->GetMake() == desiredMake &&
+                Inventory[i]->GetModel() == desiredModel &&
+                Inventory[i]->GetYear() == desiredYear)
+            {
+				InventoryIndex = i;
+            }
 
-            */
+
+			SetDaysReserved(InventoryIndex,DesiredDay); // Looks up the vehicle in the database that match the make, model, and year and sets the reservation for the specified day
 
 			break;
 		} // case 'r' or 'R'
