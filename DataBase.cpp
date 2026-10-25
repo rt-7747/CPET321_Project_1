@@ -11,7 +11,7 @@ void DataBase::~DataBase{
 
 }
 //clears the cars in the invetory for 
-void DataBase::clearInventory{
+void DataBase::ClearInventory{
 	for (Vehicle* v : Inventory) {
 		delete v;
 	}
@@ -19,7 +19,7 @@ void DataBase::clearInventory{
 
 }
 //add vehicle to invetory if max cap of 50 is not met
-bool DataBase::addVehicle(Vehicle* vehicle) {
+bool DataBase::AddVehicle(Vehicle* vehicle) {
 	if (invetory.size >= Max) {
 		std::cout << "Inventory is full.\n";
 		return false;
@@ -30,12 +30,12 @@ bool DataBase::addVehicle(Vehicle* vehicle) {
 }
 
 //presents the current date 
-int DataBase::getcurrentDate() const {
+int DataBase::GetcurrentDate() const {
 	return currentDate;
 }
 
 //advances the current date  by 1 day
-void DataBase::advanceDate() {
+void DataBase::AdvanceDate() {
 	currentDate++;
 	std::cout << "\nDate advanced to Day" << currentDate << ".\n";
 	for (Vehicle* v : inventory) {
@@ -44,7 +44,7 @@ void DataBase::advanceDate() {
 
 }
 //searchs bby the make model color and year 
-void DataBase::searchVehicle() {
+void DataBase::SearchVehicles() {
 	const std::string& query) const{
 		std::cout << "Search results for " << query << "\n";
 		bool found = false;
@@ -62,8 +62,8 @@ void DataBase::searchVehicle() {
 }
 
     
-bool Database::reserveVehicle(int vehicleIndex, int reservationDate) {
-	if (vehicleIndex < 0 || vehicleIndex >= static_case<int>(inventory.size())) {
+bool Database::ReserveVehicle(int vehicleIndex, int reservationDate) {
+	if (vehicleIndex < 0 || vehicleIndex >= static_cast<int>(inventory.size())) {
 		std::cout << "invalid vehicle chioce";
 		return false;
 	}
@@ -87,7 +87,7 @@ bool Database::reserveVehicle(int vehicleIndex, int reservationDate) {
 }
 
 //lists the cars that are avilable
-void DataBase::printAvaliableVehicles()const {
+void DataBase::PrintAvailableVehicles()const {
 	std::cout::"These are the cars avaliable for reservation"
 		bool found = false;
 	for (size_t i = 0; i < inventory.size(); i++) {
@@ -106,7 +106,7 @@ void DataBase::printAvaliableVehicles()const {
 
 
 //Prints the cars in inventory
-void DataBase::printAllVehicles()const {
+void DataBase::PrintAllVehicles()const {
 	std::cout << "all vehicles in inventory(current Date : Day" << currentDate << ").\n";
 	if (inventory.empty()) {
 		std::cout << "No vehicles in inventory.\n";
