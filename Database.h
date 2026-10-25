@@ -16,7 +16,6 @@ It can reserved up to 30 index
 #define __DATABASE_H__
 #include <vector>
 #include <string>
-#include <Vehicle.h>
 
 class Database : {
 private:
@@ -33,17 +32,18 @@ public:
     // Deconstructor
 
 //inentory 
-    bool addVehicle(Vehicle* vehicle);
-    int getCurrentDate() const;
-    void advanceDate;//
+    bool AddVehicle(Vehicle* vehicle);
+    int GetCurrentDate() const;
+    void AdvanceDate;//
     // advaces the date and clears past reserations 
     // 
-    bool searchVehicles(const std::string& query)const; // 
-    void printAllVehicles() const;
-    void printReservedVehicles() const;
-    void printAvailableVehicles() const;
+    void ClearInventory();
+    bool SearchVehicles(const std::string& query)const; // 
+    void PrintAllVehicles() const;
+    void PrintReservedVehicles() const;
+    void PrintAvailableVehicles() const;
 
-    bool reserveVehicles(int vehicleIndex, int reservationDate);
+    bool ReserveVehicles(int vehicleIndex, int reservationDate);
 
    
 
