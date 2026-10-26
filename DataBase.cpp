@@ -34,7 +34,7 @@ int DataBase::GetCurrentDate() const {
 	return currentDate;
 }
 
-//advances the current date  by 1 day
+//advances the current date  by 1 day and clears 
 void DataBase::AdvanceDate() {
 	currentDate++;
 	std::cout << "\nDate advanced to Day" << currentDate << ".\n";
@@ -43,7 +43,7 @@ void DataBase::AdvanceDate() {
 	}
 
 }
-//searchs bby the make model color and year 
+//searchs by the make model color and year 
 void DataBase::SearchVehicles() {
 	const std::string& query) const{
 		std::cout << "Search results for " << query << "\n";
