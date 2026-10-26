@@ -18,7 +18,7 @@ void DataBase::ClearInventory{
 	invetory.clear();
 
 }
-//add vehicle to invetory if max cap of 50 is not met
+//add vehicle to invetory if max cap of 50 has not yet been met. 
 bool DataBase::AddVehicle(Vehicle* vehicle) {
 	if (invetory.size >= Max) {
 		std::cout << "Inventory is full.\n";
@@ -56,7 +56,7 @@ void DataBase::SearchVehicles() {
 			}
 		}
 		if (!found) {
-			std::cout << "N matches found.\n";
+			std::cout << "No matches found.\n";
 
 		}
 }
@@ -67,21 +67,21 @@ bool Database::ReserveVehicle(int vehicleIndex, int reservationDate) {
 		std::cout << "invalid vehicle chioce";
 		return false;
 	}
-	//reservatio date muct be greater than current date
+	//reservation date must be greater than current date
 	if (reservationDate <= currentDate) {
 		std::cout << "reservation must be a future date";
 		return false;
 	}
 	Vehicle* vehicle = inventory[vehicleIndex];
 
-	//
-	// max of 3 furture reservations 
+	
+	// max of 3 future reservations 
 	if (vehicle->addreservation(reservationDate)) {
 		std:::cout << "reservation successful";
 		return true
 	}
 	else {
-		std::cout << "reservation failed.limit reached or already reserved";
+		std::cout << "reservation failed. limit reached or vehicle already reserved";
 		return false;
 	}
 }
