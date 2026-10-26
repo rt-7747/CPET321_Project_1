@@ -16,25 +16,28 @@ It can reserved up to 30 index
 #define __DATABASE_H__
 #include <vector>
 #include <string>
+#include "Vehicle.h"
+using namespace std;
 
-class Database : {
+class Database {
 private:
-    static const in Max = 50; // max number of vehicles in inventory 
-    std::vector<Vehicle*> inventory;// inventory pointers 
-
+    static const int Max = 50; // max number of vehicles in inventory 
+    static const int MaxDays = 30;
+    vector<Vehicle*> inventory;// inventory pointers 
+    bool reservations[30][50];
     int currentDate; //tracks the date
  
 
 public:
     // Constructor needed only if you have local variables of intrinsic types
     Database();
-    ~DataBase();
+    ~Database();
     // Deconstructor
 
 //inentory 
     bool AddVehicle(Vehicle* vehicle);
     int GetCurrentDate() const;
-    void AdvanceDate;//
+    void AdvanceDate();//
     // advaces the date and clears past reserations 
     // 
     void ClearInventory();
@@ -43,7 +46,7 @@ public:
     virtual void PrintReservedVehicles() const;
     virtual void PrintAvailableVehicles() const;
 
-    bool ReserveVehicles(int vehicleIndex, int reservationDate);
+    bool ReserveVehicles(int VehicleIndex, int ReservationDate);
 
    
 

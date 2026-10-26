@@ -3,8 +3,8 @@
 using namespace std;
 
 GasCar::GasCar(){
-    Capacity = 0.0;
-    Efficiency = 0.0;
+    Capacity = 0.0f;
+    Efficiency = 0.0f;
     SetEngineType("ICE");
 }//Constructor
 
@@ -38,5 +38,6 @@ void GasCar::PrintVehicleSpec()
     cout << "Year: " << GetYear() << endl;
     cout << "Engine Type: " << GetEngineType() << endl;
     cout << "Capacity: " << Capacity << endl;
-    cout << "Efficiency: " << Efficiency << endl << endl;
+    cout << "Efficiency: " << Efficiency << endl;
+    cout << "Color: " << GetColor() << endl << endl;
 }

@@ -1,4 +1,9 @@
 #include <iostream>
+#include <fstream>
+#include <sstream>
+#include <string>
+#include <vector>
+
 #include "Database.h"
 #include "Vehicle.h"
 #include "ElectricCar.h"
@@ -6,259 +11,255 @@
 
 using namespace std;
 
-/*
-void PrintVehicle(Vehicle* V)
-{
-    string blank;
-    cout << "Make: " << V->GetMake() << "  Model: " << V->GetModel()
-        << "  Year: " << V->GetYear() << endl;
-    V->GetStats(blank, blank, blank);
-    if (isReserved = false)
-    {
-        cout << " AVALIABLE" << endl;
+int main() {
+    Database db;
+
+    ifstream InFile;
+    string Line;
+
+    InFile.open("Inventory.txt");
+
+    if (!InFile.is_open()) {
+        cout << "Error! Inventory file could not be opened." << endl;
+        return -1;
     }
-    else
-    {
-        cout << "This vehicle is reserved on: ";
-        for (int i = 0; i < 30; i++) {
-			for (int j = 0; j < 50; j++)
-			{
-				if (Days[i]Reservations[j] == V)
-				{
-					cout << "Day " << i + 1 << endl;
-				}
-			}
+
+    while (getline(InFile, Line)) {
+        istringstream Record(Line);
+        string Field;
+        vector<string> Fields;
+
+        while (Record >> Field) {
+            Fields.push_back(Field);
         }
 
-    }
-}
-*/
+        // Ignore blank lines.
+        if (Fields.empty()) {
+            continue;
+        }
 
-int main() {
-    /*
-	When a car is reserved for example a Tesla Model S 2020 is reserved for day 3 and the Tesla Model S is in Inventory[4] Day[6]Reseravation[0] = Inventory[4]
-    */
+        // Make + Model + Year + EngineType + Capacity
+        // + Efficiency + Color = at least 7 fields.
+        if (Fields.size() < 7) {
+            cout << "Error! Inventory file is malformed." << endl;
+            cout << Line << endl;
+            InFile.close();
+            return -2;
+        }
 
-	ifstream InFile;
-	string line;
-	
-	InFile.open("Inventory.txt");
-	if (!InFile.is_open()) {
-		cout << "Error! Inventory file could not be opened." << endl;
-		return -1;
-	}
-    while (getline(InFile, Line))
-    {
-        // String stream for parsing words from the line
-        istringstream Record(Line);
-        // String to hold the parsed field
-        string Field;
-        // Strings to hold the individual fields
-        string Make, Model, Year, EngineType, Capacity, Efficiency, Color;
+        string Make = Fields[0];
+        string Model = "";
 
-        // Get the strings from the line
-        int FieldCount = 0;
-        while (Record >> Field)
-        {
-            FieldCount++;
-            switch (FieldCount)
-            {
-            case 1: { Make = Field; break; }
-            case 2: { Model = Field; break; }
-            case 3: { Year = Field; break; }
-            case 4: { EngineType = Field; break; }
-            case 5: { Capacity = Field; break; }
-            case 6: { Efficiency = Field; break; }
-			case 7: { Color = Field; break; }
+        // The final five fields are Year, EngineType,
+        // Capacity, Efficiency, and Color.
+        int YearIndex = static_cast<int>(Fields.size()) - 5;
 
-            } // switch()
-        } // while()
-		if (FieldCount != 7)
-		{
-			cout << "Error! Inventory file is malformed." << endl;
-			cout << Line << endl;
-			return -2;
-		} // if()
-        if (EngineType == "ICE")
-        {
-            //Vehicle* Gas_ptr;
-            GasVehicle* Gas_ptr = new GasVehicle;
+        for (int i = 1; i < YearIndex; i++) {
+            if (Model != "") {
+                Model += " ";
+            }
+
+            Model += Fields[i];
+        }
+
+        string Year = Fields[YearIndex];
+        string EngineType = Fields[YearIndex + 1];
+        string Capacity = Fields[YearIndex + 2];
+        string Efficiency = Fields[YearIndex + 3];
+        string Color = Fields[YearIndex + 4];
+
+        float CapacityValue;
+        float EfficiencyValue;
+
+        istringstream CapacityStream(Capacity);
+        istringstream EfficiencyStream(Efficiency);
+
+        if (!(CapacityStream >> CapacityValue) ||
+            !(EfficiencyStream >> EfficiencyValue)) {
+            cout << "Error! Invalid capacity or efficiency." << endl;
+            cout << Line << endl;
+            InFile.close();
+            return -2;
+        }
+
+        if (EngineType == "ICE") {
+            GasCar* Gas_ptr = new GasCar;
 
             Gas_ptr->SetMake(Make);
             Gas_ptr->SetModel(Model);
             Gas_ptr->SetYear(Year);
             Gas_ptr->SetEngineType(EngineType);
-            Gas_ptr->GetFuelCap(Capacity);
-            Gas_ptr->GetGas_Efficiency(Efficiency);
+            Gas_ptr->SetColor(Color);
+            Gas_ptr->SetFuelCapacity(CapacityValue);
+            Gas_ptr->SetEfficiency(EfficiencyValue);
 
-            db.AddVehicle(Gas_ptr);
-        } // if()
-        else if (EngineType == "EV")
-        {
-            //Vehicle* EV_ptr;
-            ElectricVehicle* EV_ptr = new ElectricVehicle;
+            if (!db.AddVehicle(Gas_ptr)) {
+                delete Gas_ptr;
+            }
+        }
+        else if (EngineType == "EV") {
+            ElectricCar* EV_ptr = new ElectricCar;
 
-            // Set the fields
             EV_ptr->SetMake(Make);
             EV_ptr->SetModel(Model);
             EV_ptr->SetYear(Year);
             EV_ptr->SetEngineType(EngineType);
-            EV_ptr->GetEnergyCap(Capacity);
-            EV_ptr->GetEV_Efficiency(Efficiency);
+            EV_ptr->SetColor(Color);
+            EV_ptr->SetEnergyCapacity(CapacityValue);
+            EV_ptr->SetEfficiency(EfficiencyValue);
 
-            // Insert the Electric car into the database
-
-            db.AddVehicle(EV_ptr);
-        } // if...if...else()
-        else
-        {
+            if (!db.AddVehicle(EV_ptr)) {
+                delete EV_ptr;
+            }
+        }
+        else {
             cout << "Error! Unrecognized propulsion type." << endl;
+            InFile.close();
             return -3;
-        } // if...else()
-    } // while()
+        }
+    }
+
+    InFile.close();
 
     bool ExitRequested = false;
+
     do {
         char Command;
-        // Prompt the user for the program option (search by Make, Model, Year, or
-        //   or exit the program)
-		cout << "                                 _        _ " << endl;
-        cout << "                                | |      | |" << endl;
-        cout << "  ___ __ _ _ __   _ __ ___ _ __ | |_ __ _| |" << endl;
-		cout << " / __/ _` | '__| | '__/ _ \ '_ \| __/ _` | |" << endl;
-		cout << "| (_| (_| | |    | | |  __/ | | | || (_| | |" << endl;
-		cout << " \___\__,_|_|    |_|  \___|_| |_|\__\__,_|_|" << endl;
-		cout << "================================================" << endl
-        cout << "Hello, today is Day " << GetCurrentDate() << endl;
+
+        cout << "\n============================================" << endl;
+        cout << "          VEHICLE RESERVATION SYSTEM" << endl;
+        cout << "============================================" << endl;
+        cout << "Hello, today is Day " << db.GetCurrentDate() << endl;
         cout << "Enter Command (? for help) > ";
+
         cin >> Command;
 
-        // Process the command
-        switch (Command)
-        {
-        case '?': // Help screen
-        {
-			cout << "DAY " << GetCurrentDate() << endl;
+        switch (Command) {
+        case '?': {
+            cout << "\nDAY " << db.GetCurrentDate() << endl;
             cout << " ? = Display Help" << endl;
             cout << " M = Search by Make" << endl;
-            cout << " O = Search by model" << endl;
+            cout << " O = Search by Model" << endl;
             cout << " Y = Search by Year" << endl;
-			cout << " C = Search by Color" << endl;
-			cout << " R = Set a Reservation" << endl;
-            cout << " A = Print Avaliable Vehicle List" << endl;
+            cout << " C = Search by Color" << endl;
+            cout << " R = Set a Reservation" << endl;
+            cout << " A = Print Available Vehicle List" << endl;
             cout << " P = Print Reserved Vehicle List" << endl;
             cout << " I = Print Inventory" << endl;
-			cout << " D = Advance the Date" << endl;
-            cout << " Q = Quit / Exit the program" << endl;
+            cout << " D = Advance the Date" << endl;
+            cout << " Q = Quit" << endl;
             break;
-        } // Case '?'
-        case 'm': case 'M': // Search by Make
-        {
-            // Prompt the user for the search criteria
+        }
+
+        case 'm':
+        case 'M': {
             string DesiredMake;
+
             cout << "Enter Make > ";
             cin >> DesiredMake;
 
-            // Search the database
-            SearchVehicles(DesiredMake);
+            db.SearchVehicles(DesiredMake);
             break;
-            // Print out matching entries
-        } // case 'a' or 'A'
-        case 'o': case 'O': // Search by Model
-        {
-            // Prompt the user for the search criteria
+        }
+
+        case 'o':
+        case 'O': {
             string DesiredModel;
-            cout << "Enter Model > ";
+
+            cout << "Enter Model (use underscores for spaces) > ";
             cin >> DesiredModel;
 
-            SearchVehicles(DesiredModel);
+            for (int i = 0; i < static_cast<int>(DesiredModel.length()); i++) {
+                if (DesiredModel[i] == '_') {
+                    DesiredModel[i] = ' ';
+                }
+            }
+
+            db.SearchVehicles(DesiredModel);
             break;
-        } // case 'o' or 'O'
-        case 'y': case 'Y': // Search by Year
-        {
-            // Prompt the user for the search criteria
+        }
+
+        case 'y':
+        case 'Y': {
             string DesiredYear;
+
             cout << "Enter Year > ";
             cin >> DesiredYear;
-            SearchVehicles(DesiredYear);
+
+            db.SearchVehicles(DesiredYear);
             break;
-            // Print out matching entries
-        } // case 'y' or 'Y'
-		case 'c': case 'C': // Search by Color
-		{
-			// Prompt the user for the search criteria
-			string DesiredColor;
-			cout << "Enter Color > ";
-			cin >> DesiredColor;
-            SearchVehicles(DesiredColor);
-			break;
-		} // case 'c' or 'C'
-		case 'r': case 'R': // Set a Reservation
-		{
-			// Prompt the user for the search criteria
-			string DesiredMake;
-			string DesiredModel;
-            string DesiredYear;
+        }
+
+        case 'c':
+        case 'C': {
+            string DesiredColor;
+
+            cout << "Enter Color > ";
+            cin >> DesiredColor;
+
+            db.SearchVehicles(DesiredColor);
+            break;
+        }
+
+        case 'r':
+        case 'R': {
+            int VehicleIndex;
             int DesiredDay;
 
-            cout << "Enter Make, Model, and Year of desired vehicle > " << endl;
-			cin >> DesiredMake;
-			cin >> DesiredModel;
-			cin >> DesiredYear;
-			cin >> DesiredDay;
+            db.PrintAllVehicles();
 
-			DesiredDay = DesiredDay - 1; // Adjusting for array
-          
-            int InventoryIndex = -1;
+            cout << "Enter inventory number > ";
+            cin >> VehicleIndex;
 
-            //Need getter for Inventory based on given make model and year
+            cout << "Enter reservation day (1-30) > ";
+            cin >> DesiredDay;
 
-            /*
-            
-            if (inventory[i] != nullptr &&
-                Inventory[i]->GetMake() == desiredMake &&
-                Inventory[i]->GetModel() == desiredModel &&
-                Inventory[i]->GetYear() == desiredYear)
-            {
-				InventoryIndex = i;
-            }
-            */
+            // Convert the displayed inventory number to a zero-based index.
+            VehicleIndex--;
 
-			ReserveVehicle(InventoryIndex,DesiredDay); // Looks up the vehicle in the database that match the make, model, and year and sets the reservation for the specified day
-
-			break;
-		} // case 'r' or 'R'
-		case 'a': case 'A': // Print Available Vehicle List
-		{
-            PrintAvailableVehicles();
-			break;
-		} // case 'a' or 'A'
-        case 'p': case 'P': // Print Reserved Vehicle List
-        {
-            PrintReservedVehicles();
+            db.ReserveVehicles(VehicleIndex, ReservationDate);
             break;
-        } // case 'p' or 'P'
-		case 'i': case 'I': // Print Inventory
-		{
-			PrintAllVehicles();
-			break;
-		} // case 'i' or 'I'
-		case 'd': case 'D': // Advance the Date
-		{
-			AdvanceDate();
-			cout << "Date: Day" << GetCurrentDate() << endl;
-			break;
-		} // case 'd' or 'D'
-        case 'q': case 'Q': // Exit the program
-        {
+        }
+
+        case 'a':
+        case 'A': {
+            db.PrintAvailableVehicles();
+            break;
+        }
+
+        case 'p':
+        case 'P': {
+            db.PrintReservedVehicles();
+            break;
+        }
+
+        case 'i':
+        case 'I': {
+            db.PrintAllVehicles();
+            break;
+        }
+
+        case 'd':
+        case 'D': {
+            db.AdvanceDate();
+            cout << "Current date: Day "
+                 << db.GetCurrentDate() << endl;
+            break;
+        }
+
+        case 'q':
+        case 'Q': {
             ExitRequested = true;
             break;
-        } // case 'q' or 'Q'
-       // "otherwise" is not needed, any other command is ignored
-        } // switch()
+        }
+
+        default: {
+            cout << "Unknown command. Enter ? for help." << endl;
+            break;
+        }
+        }
 
     } while (!ExitRequested);
 
-    // No error possible
-	return 0;
+    return 0;
 }

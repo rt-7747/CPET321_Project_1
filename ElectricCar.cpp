@@ -4,8 +4,8 @@
 using namespace std;
 
 ElectricCar::ElectricCar(){
-    Capacity = 0.0;
-    Efficiency = 0.0;
+    Capacity = 0.0f;
+    Efficiency = 0.0f;
     SetEngineType("EV");
 }//Constructor
 
@@ -42,5 +42,6 @@ void ElectricCar::PrintVehicleSpec()
     cout << "Year: " << GetYear() << endl;
     cout << "Engine Type: " << GetEngineType() << endl;
     cout << "Capacity: " << Capacity << endl;
-    cout << "Efficiency: " << Efficiency << endl << endl;
+    cout << "Efficiency: " << Efficiency << endl;
+    cout << "Color: " << GetColor() << endl << endl;
 }//Base class

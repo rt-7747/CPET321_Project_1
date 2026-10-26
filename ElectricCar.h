@@ -10,8 +10,8 @@
 class ElectricCar : public Vehicle {
 private:
 
-    string Capacity;
-    string Efficiency;
+    float Capacity;
+    float Efficiency;
 
 
 public:

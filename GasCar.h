@@ -26,7 +26,7 @@ public:
     float GetCapacity();
     
     // From Base class
-    void PrintVehicleSpec();
+    void PrintVehicleSpec() override;
 
 };
 
