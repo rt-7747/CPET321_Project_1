@@ -4,19 +4,15 @@
 #ifndef __VEHICLE_H__
 #define __VEHICLE_H__
 #include <string>
-#include "Database.h"
+#include <vector>
+
 using namespace std;
 
-class Vehicle : public Database {
+class Vehicle {
 private:
 
     string Color, Make, Model, Year, EngineType; // Normal String
-    int Vcount = 0; // Vehicle count
-    int RScount = 0; // Reserved Vehicle count
-    int Acount = 0; // Available Vehicle count
-    int Reserved[3]; //Reserved Vehicle Array
-    int Available[30]; // Available Vehicle Array
-
+    vector<int> ReservationDays;
 public:
     // Constructor needed only if you have local variables of intrinsic types
     Vehicle();
@@ -40,13 +36,9 @@ public:
     virtual float GetEfficiency() = 0;
     virtual void PrintVehicleSpec() = 0;
     
-    //Enlist vehicle to reservation
-    void AddVehicleToReserve();
-    
-    //From base class (GrandFather class)
-    void PrintReservedVehicles() const;
-    void PrintAvailableVehicles() const;
-    void PrintAllVehicles() const;
+    //
+    bool HasReservation() const;
+    void PrintReservations() const;
     
     //Deconstructor (gas & electric car objects)
     virtual ~Vehicle();
