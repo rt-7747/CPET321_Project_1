@@ -35,7 +35,7 @@ void Database::ClearInventory() {
 }
 //add vehicle to invetory if max cap of 50 is not met
 bool Database::AddVehicle(Vehicle* vehicle) {
-	if (invetory.size >= Max) {
+	if (static_cast<int>(inventory.size()) >= Max) {
 		cout << "Inventory is full.\n";
 		return false;
 	}
@@ -65,7 +65,7 @@ void Database::AdvanceDate() {
     }
 }
 //searchs bby the make model color and year 
-bool Database::SearchVehicles(const std::string& query) const{
+bool Database::SearchVehicles(const string& query) const{
 		bool found = false;
 
     cout << "Search results for: " << query << endl;
@@ -85,7 +85,7 @@ bool Database::SearchVehicles(const std::string& query) const{
     return found;
 }
     
-bool Database::ReserveVehicle(int VehicleIndex, int ReservationDate) {
+bool Database::ReserveVehicles(int VehicleIndex, int ReservationDate) {
 	if (VehicleIndex < 0 || VehicleIndex >= static_cast<int>(inventory.size())) {
 		cout << "invalid vehicle chioce";
 		return false;
@@ -155,11 +155,11 @@ void Database::PrintAllVehicles()const {
 void Database::PrintReservedVehicles()const {
 	cout << "Vehicles with future reservations";
 	bool found = false;
-	for size_t i = 0; i < inventory.size(); i++){
-		if (inventory[i]->hasReservations()) {
+	for (size_t i = 0; i < inventory.size(); i++){
+		if (inventory[i]->HasReservation()) {
 			cout<< i + 1;
 			inventory[i]->PrintVehicleSpec();
-			inventory[i]->PrintReservedVehicles();
+			inventory[i]->PrintReservations();
 			found = true;
 		}
 	}
@@ -167,8 +167,5 @@ void Database::PrintReservedVehicles()const {
 		cout << "no vehcles currently have reservtations";
 
 	}
-}
-
-
 }
 
