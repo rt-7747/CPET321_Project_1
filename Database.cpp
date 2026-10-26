@@ -84,12 +84,14 @@ bool Database::SearchVehicles(const string& query) const{
 
     return found;
 }
-    
+    //reserve the vehicle of choice
 bool Database::ReserveVehicles(int VehicleIndex, int ReservationDate) {
 	if (VehicleIndex < 0 || VehicleIndex >= static_cast<int>(inventory.size())) {
 		cout << "invalid vehicle chioce";
 		return false;
 	}
+
+	// max of 3 future reservations 
 	 if (ReservationDate <= currentDate || ReservationDate > MaxDays) {
         cout << "Reservation must be between Day " << currentDate + 1 << " and Day " << MaxDays << "." << endl;
         return false;
