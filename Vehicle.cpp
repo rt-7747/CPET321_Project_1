@@ -50,6 +50,23 @@ string Vehicle::GetEngineType() {
     return EngineType;
 }//GetEngineType()
 
+bool Vehicle::HasReservation() const {
+    return !ReservationDays.empty();
+}
+
+void Vehicle::PrintReservations() const {
+    if (ReservationDays.empty()) {
+        cout << "No reservations.\n";
+        return;
+    }
+
+    cout << "Reserved days: ";
+    for (size_t i = 0; i < ReservationDays.size(); i++) {
+        cout << ReservationDays[i] << " ";
+    }
+    cout << '\n';
+}
+
 //Deconstructor
 Vehicle :: ~Vehicle(){
     
