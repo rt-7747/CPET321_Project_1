@@ -41,7 +41,7 @@ public:
     // advaces the date and clears past reserations 
     // 
     void ClearInventory();
-    bool SearchVehicles(const std::string& query)const; // 
+    bool SearchVehicles(const string& query)const; // 
     virtual void PrintAllVehicles() const;
     virtual void PrintReservedVehicles() const;
     virtual void PrintAvailableVehicles() const;
