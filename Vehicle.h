@@ -14,7 +14,7 @@ private:
     string Color, Make, Model, Year, EngineType; // Normal String
     vector<int> ReservationDays;
 public:
-    // Constructor needed only if you have local variables of intrinsic types
+    // Constructor
     Vehicle();
     
     // Method to get Make, Model, Year, & Engine Type
@@ -36,12 +36,12 @@ public:
     virtual float GetEfficiency() = 0;
     virtual void PrintVehicleSpec() = 0;
     
-    //
+    //Reservation methods need in Vehicle
     bool HasReservation() const;
     void PrintReservations() const;
     
     //Deconstructor (gas & electric car objects)
-    virtual ~Vehicle();
+    ~Vehicle();
 };
 
 #endif
