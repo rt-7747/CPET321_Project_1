@@ -204,7 +204,7 @@ int main() {
         case 'r':
         case 'R': {
             int VehicleIndex;
-            int DesiredDay;
+            int ReservationDate;
 
             db.PrintAllVehicles();
 
@@ -212,7 +212,7 @@ int main() {
             cin >> VehicleIndex;
 
             cout << "Enter reservation day (1-30) > ";
-            cin >> DesiredDay;
+            cin >> ReservationDate;
 
             // Convert the displayed inventory number to a zero-based index.
             VehicleIndex--;
