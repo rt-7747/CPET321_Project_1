@@ -73,17 +73,6 @@ int main() {
 
         float CapacityValue;
         float EfficiencyValue;
-
-        istringstream CapacityStream(Capacity);
-        istringstream EfficiencyStream(Efficiency);
-
-        if (!(CapacityStream >> CapacityValue) ||
-            !(EfficiencyStream >> EfficiencyValue)) {
-            cout << "Error! Invalid capacity or efficiency." << endl;
-            cout << Line << endl;
-            InFile.close();
-            return -2;
-        }
        
         if (EngineType == "ICE") {
             GasCar* Gas_ptr = new GasCar;
