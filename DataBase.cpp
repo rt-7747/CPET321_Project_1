@@ -49,7 +49,7 @@ void DataBase::SearchVehicles() {
 		std::cout << "Search results for " << query << "\n";
 		bool found = false;
 		for (size_t i = 0; i < inventory.size(); i++) {
-			if (inventory[i]->amtchesQuery(query)) { // matches against vehicles 
+			if (inventory[i]->matchesQuery(query)) { // matches against vehicles 
 				std::cout << i + 1;
 				inventory[i]->printDetails();
 				found = true;
@@ -86,15 +86,15 @@ bool Database::ReserveVehicle(int vehicleIndex, int reservationDate) {
 	}
 }
 
-//lists the cars that are avilable
+//lists the cars that are available. 
 void DataBase::PrintAvailableVehicles()const {
 	std::cout::"These are the cars avaliable for reservation"
 		bool found = false;
-	for (size_t i = 0; i < inventory.size(); i++) {
+	for (size_t i = 0; i < inventory.size(); ++i) {
 		if (!inventory[i]->  hasReservations()) {
 			std::cout << i + 1;
 			inventory[i]->printDetails();
-			found true;
+			found = true;
 			
 		}
 	}
