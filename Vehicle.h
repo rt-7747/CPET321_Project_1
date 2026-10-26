@@ -4,6 +4,7 @@
 #ifndef __VEHICLE_H__
 #define __VEHICLE_H__
 #include <string>
+#include <vector>
 
 using namespace std;
 
@@ -11,7 +12,7 @@ class Vehicle {
 private:
 
     string Color, Make, Model, Year, EngineType; // Normal String
-
+    vector<int> ReservationDays;
 public:
     // Constructor needed only if you have local variables of intrinsic types
     Vehicle();
@@ -35,6 +36,9 @@ public:
     virtual float GetEfficiency() = 0;
     virtual void PrintVehicleSpec() = 0;
     
+    //
+    bool HasReservation() const;
+    void PrintReservations() const;
     
     //Deconstructor (gas & electric car objects)
     virtual ~Vehicle();
